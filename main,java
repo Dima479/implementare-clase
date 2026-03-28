@@ -1,0 +1,15 @@
+public class main {
+    public satic void main(String[] args) {
+        Sistem sistem = new Sistem("Sistem Meteo Central");
+        Senzor s1 = new Senzor();
+        Senzor s2 = new Senzor();
+        sistem.adaugareSenzori(s1);
+        sistem.adaugareSenzori(s2);
+        System.out.println("Sistemul a fost initializat.");
+        Arraylist<DateMeteo> inregistrariDate= new Arraylist<>();
+        inregistrariDate.add(sistem.actualizareDate()); //funcionalitatea Actualizare in timp real + adaugare in "baza de date" improvizata
+
+
+    }
+
+}
