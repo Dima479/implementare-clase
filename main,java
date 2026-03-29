@@ -1,15 +1,25 @@
+//Use-case Sistemul citeste de la senzori datele si le afiseaza
+import java.util.ArrayList;
+
 public class main {
-    public satic void main(String[] args) {
+    public static void main(String[] args) {
         Sistem sistem = new Sistem("Sistem Meteo Central");
-        Senzor s1 = new Senzor();
-        Senzor s2 = new Senzor();
+        
+        Senzor s1 = new Senzor(1,true,"temperatura");
+        Senzor s2 = new Senzor(2,true,"presiune");
+        
         sistem.adaugareSenzori(s1);
         sistem.adaugareSenzori(s2);
+        
         System.out.println("Sistemul a fost initializat.");
-        Arraylist<DateMeteo> inregistrariDate= new Arraylist<>();
-        inregistrariDate.add(sistem.actualizareDate()); //funcionalitatea Actualizare in timp real + adaugare in "baza de date" improvizata
-
-
+        
+        ArrayList<DateMeteo> istoric = new ArrayList<>();
+        DateMeteo dateCurente = sistem.actualizareDate();
+        
+        if(dateCurente != null) {
+        	istoric.add(dateCurente);
+        	System.out.println("Date adaugate in istoric");
+        }
     }
 
 }

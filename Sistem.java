@@ -4,13 +4,20 @@ public class Sistem {
 	private String numeSistem;
 	private ArrayList<Senzor> senzori;
     private ArrayList<Utilizator> utilizatori;
+    private ArrayList<Alerta> alerte;
+    
 	public Sistem(String numeSistem) {
 		this.numeSistem = numeSistem;
 		this.senzori = new ArrayList<Senzor>();
+		this.utilizatori = new ArrayList();
+		this.alerte = new ArrayList<>();
 	}
+	
 	public void adaugareSenzori(Senzor senzor){
 		this.senzori.add(senzor);
 	}
+	public void adaugareUtilizator(Utilizator utilizator){
+		this.utilizatori.add(utilizator); }
 
 
 /**
@@ -20,8 +27,7 @@ public class Sistem {
 
 	public DateMeteo actualizareDate() {
 		DateMeteo date = new DateMeteo();
-		for(Senzor senzor: senzori)
-		{
+		for(Senzor senzor: senzori) {
 			String tip = senzor.obtinetip();
 			switch (tip) {
 				case "temperatura":
@@ -58,6 +64,9 @@ public class Sistem {
 	public String analizaSaptamanala() {
 		throw new UnsupportedOperationException();
 
+	}
+	public PredictieViitoare genereazaPredictie() {
+		throw new UnsupportedOperationException();
 	}
 
 
